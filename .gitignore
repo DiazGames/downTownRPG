@@ -34,3 +34,12 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+*.meta
+/ProjectSettings
+/Assets/QFramework
+/Assets/.qframework
+/Assets/Fantasy Wooden GUI  Package
+/Assets/HeroEditor
+/Assets/GUI Kit The Stone
+/Assets/FantasyBackgrounds
+

@@ -1415,7 +1415,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4244831222412198}
   - component: {fileID: 114545994603190276}
-  - component: {fileID: 114207491842377434}
   - component: {fileID: 114892827994246592}
   - component: {fileID: 114773102524145214}
   m_Layer: 0
@@ -3276,17 +3275,6 @@ MonoBehaviour:
   FireButtonDown: 0
   FireButtonPressed: 0
   FireButtonUp: 0
---- !u!114 &114207491842377434
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1858922531311142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7655dbdbae96492abedad7bdc555301d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114302666609707116
 MonoBehaviour:
   m_ObjectHideFlags: 1

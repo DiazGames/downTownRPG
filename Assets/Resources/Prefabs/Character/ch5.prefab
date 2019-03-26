@@ -742,7 +742,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4350600730148586}
   - component: {fileID: 114762520063223438}
-  - component: {fileID: 114272438417508494}
   - component: {fileID: 114060874810578658}
   - component: {fileID: 114339582928797702}
   m_Layer: 0
@@ -3289,17 +3288,6 @@ MonoBehaviour:
   FireButton: 324
   ReloadButton: 114
   FixHorizontal: 0
---- !u!114 &114272438417508494
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1535584777088614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7655dbdbae96492abedad7bdc555301d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114311967018222032
 MonoBehaviour:
   m_ObjectHideFlags: 1

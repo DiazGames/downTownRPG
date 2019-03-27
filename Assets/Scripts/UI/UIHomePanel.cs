@@ -108,6 +108,11 @@ namespace DiazDTRPG
                 {
                     UIMgr.OpenPanel<UIMyInfoPanel>();
                 });
+
+            BtnPlay.OnClickAsObservable().Subscribe(_ =>
+            {
+                UIMgr.OpenPanel<UIMapPanel>();
+            });
         }
         protected override void ProcessMsg(int eventId, QFramework.QMsg msg)
         {

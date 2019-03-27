@@ -53,6 +53,10 @@ namespace DiazDTRPG
         [SerializeField()]
         public Button btnGemAdd;
         
+        // 战斗按钮
+        [SerializeField()]
+        public Button BtnPlay;
+        
         [SerializeField()]
         public Button MenuBackpack;
         
@@ -86,6 +90,7 @@ namespace DiazDTRPG
             MenuHeros = null;
             BtnUserInfo = null;
             btnGemAdd = null;
+            BtnPlay = null;
             MenuBackpack = null;
             MenuTeam = null;
             mData = null;

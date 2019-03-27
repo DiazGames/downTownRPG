@@ -29,12 +29,23 @@ namespace DiazDTRPG
         {
             BtnContinue.OnClickAsObservable().Subscribe(_ =>
             {
+                //UIMgr.GetPanel<UIGamePanel>().mData.ShowCharacters = true;
+                UIMgr.GetPanel<UIGamePanel>().Transform.Find("Characters").gameObject.SetActive(true);
+                UIMgr.GetPanel<UIGamePanel>().Transform.Find("Emenys").gameObject.SetActive(true);
                 CloseSelf();
             });
 
             BtnRestart.OnClickAsObservable().Subscribe(_ =>
             {
+                //UIMgr.GetPanel<UIGamePanel>().mData.ShowCharacters = true;
+                UIMgr.GetPanel<UIGamePanel>().Transform.Find("Characters").gameObject.SetActive(true);
+                UIMgr.GetPanel<UIGamePanel>().Transform.Find("Emenys").gameObject.SetActive(true);
                 CloseSelf();
+            });
+            BtnGiveUp.OnClickAsObservable().Subscribe(_ =>
+            {
+                CloseSelf();
+                UIMgr.ClosePanel<UIGamePanel>();
             });
 
             BtnSetting.OnClickAsObservable().Subscribe(_ =>
@@ -61,6 +72,8 @@ namespace DiazDTRPG
         
         protected override void OnShow()
         {
+
+               
         }
         
         protected override void OnHide()
@@ -69,6 +82,7 @@ namespace DiazDTRPG
         
         protected override void OnClose()
         {
+
         }
     }
 }

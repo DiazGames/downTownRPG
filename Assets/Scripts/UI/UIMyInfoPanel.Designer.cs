@@ -24,6 +24,9 @@ namespace DiazDTRPG
         public const string NAME = "UIMyInfoPanel";
         
         [SerializeField()]
+        public Button Background;
+        
+        [SerializeField()]
         public Button BtnClose;
         
         private UIMyInfoPanelData mPrivateData = null;
@@ -43,6 +46,7 @@ namespace DiazDTRPG
         
         protected override void ClearUIComponents()
         {
+            Background = null;
             BtnClose = null;
             mData = null;
         }

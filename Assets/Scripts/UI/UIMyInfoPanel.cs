@@ -27,11 +27,14 @@ namespace DiazDTRPG
     {
         protected override void RegisterUIEvent()
         {
-            BtnClose.OnClickAsObservable()
-                .Subscribe(_ =>
-                {
-                    CloseSelf();
-                });
+            BtnClose.OnClickAsObservable().Subscribe(_ =>
+            {
+                CloseSelf();
+            });
+            Background.OnClickAsObservable().Subscribe(_ =>
+            {
+                CloseSelf();
+            });
         }
 
         protected override void ProcessMsg(int eventId, QFramework.QMsg msg)

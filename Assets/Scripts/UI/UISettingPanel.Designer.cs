@@ -24,6 +24,9 @@ namespace DiazDTRPG
         public const string NAME = "UISettingPanel";
         
         [SerializeField()]
+        public Button Background;
+        
+        [SerializeField()]
         public Button btnClose;
         
         private UISettingPanelData mPrivateData = null;
@@ -43,6 +46,7 @@ namespace DiazDTRPG
         
         protected override void ClearUIComponents()
         {
+            Background = null;
             btnClose = null;
             mData = null;
         }

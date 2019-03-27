@@ -38,7 +38,10 @@ namespace DiazDTRPG
                 {
                     CloseSelf();
                 });
-
+            Background.OnClickAsObservable().Subscribe(_ =>
+            {
+                CloseSelf();
+            });
         }
 
         protected override void ProcessMsg(int eventId, QFramework.QMsg msg)

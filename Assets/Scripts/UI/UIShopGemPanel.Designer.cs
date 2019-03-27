@@ -24,6 +24,9 @@ namespace DiazDTRPG
         public const string NAME = "UIShopGemPanel";
         
         [SerializeField()]
+        public Button Background;
+        
+        [SerializeField()]
         public Button BtnDiamand;
         
         [SerializeField()]
@@ -49,6 +52,7 @@ namespace DiazDTRPG
         
         protected override void ClearUIComponents()
         {
+            Background = null;
             BtnDiamand = null;
             BtnGold = null;
             BtnClose = null;

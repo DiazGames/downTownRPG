@@ -31,6 +31,10 @@ namespace DiazDTRPG
         [SerializeField()]
         public Button BtnRestart;
         
+        // 放弃战斗
+        [SerializeField()]
+        public Button BtnGiveUp;
+        
         // 设置按钮
         [SerializeField()]
         public Button BtnSetting;
@@ -54,6 +58,7 @@ namespace DiazDTRPG
         {
             BtnContinue = null;
             BtnRestart = null;
+            BtnGiveUp = null;
             BtnSetting = null;
             mData = null;
         }

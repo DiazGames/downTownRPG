@@ -1023,8 +1023,9 @@ GameObject:
   - component: {fileID: 222805694390864544}
   - component: {fileID: 114646580639956970}
   - component: {fileID: 114094769128737330}
+  - component: {fileID: 114351286385012250}
   m_Layer: 5
-  m_Name: Button_Play
+  m_Name: BtnPlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2106,6 +2107,20 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.16862746}
   m_EffectDistance: {x: 5, y: -4}
   m_UseGraphicAlpha: 1
+--- !u!114 &114351286385012250
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1872626042368540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4211833ca4e7a4984b2d973425a62933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MarkType: 0
+  CustomComponentName: 
+  CustomComment: "\u6218\u6597\u6309\u94AE"
 --- !u!114 &114360632171092168
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2128,6 +2143,7 @@ MonoBehaviour:
   MenuHeros: {fileID: 114093866006917088}
   BtnUserInfo: {fileID: 114994936806520228}
   btnGemAdd: {fileID: 114287447388731560}
+  BtnPlay: {fileID: 114094769128737330}
   MenuBackpack: {fileID: 114529658625706768}
   MenuTeam: {fileID: 114208462551486840}
 --- !u!114 &114362048028302980

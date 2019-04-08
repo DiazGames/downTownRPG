@@ -26,27 +26,12 @@ namespace DiazDTRPG
     
     public partial class UIGamePanel : QFramework.UIPanel
     {
-        protected override void InitUI(IUIData uiData)
-        {
-            mData = uiData as UIGamePanelData ?? new UIGamePanelData();
-        }
-
         protected override void RegisterUIEvent()
         {
-            //Observable.EveryUpdate().Subscribe(_ =>
-            //{
-            //    if (this.isActiveAndEnabled)
-            //    {
-            //        Transform.Find("Characters").gameObject.SetActive(mData.ShowCharacters);
-            //        Transform.Find("Emenys").gameObject.SetActive(mData.ShowCharacters);
-            //    }
-            //});
-
             BtnPause.OnClickAsObservable().Subscribe(_ =>
             {
                 Debug.Log("BtnPause clicked!");
 
-                //this.mData.ShowCharacters = false;
                 Transform.Find("Characters").gameObject.SetActive(false);
                 Transform.Find("Emenys").gameObject.SetActive(false);
                 UIMgr.OpenPanel<UIGamePausePanel>();

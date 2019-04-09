@@ -31,10 +31,12 @@ namespace DiazDTRPG
             {
                 CloseSelf();
             });
+
             Background.OnClickAsObservable().Subscribe(_ =>
             {
                 CloseSelf();
             });
+
             BtnOK.OnClickAsObservable().Subscribe(_ =>
             {
                 CloseSelf();

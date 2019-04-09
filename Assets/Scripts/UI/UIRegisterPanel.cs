@@ -16,36 +16,42 @@ namespace DiazDTRPG
     using System.Linq;
     using UnityEngine;
     using UnityEngine.UI;
-    using QFramework;
     using UniRx;
+    using QFramework;
     
-    
-    public class UISettingPanelData : QFramework.UIPanelData
+    public class UIRegisterPanelData : QFramework.UIPanelData
     {
     }
     
-    public partial class UISettingPanel : QFramework.UIPanel
+    public partial class UIRegisterPanel : QFramework.UIPanel
     {
         protected override void RegisterUIEvent()
         {
-            btnClose.OnClickAsObservable().Subscribe(_ =>
+            BtnClose.OnClickAsObservable().Subscribe(_ =>
             {
                 CloseSelf();
             });
 
-            Background.OnClickAsObservable().Subscribe(_ =>
+            BtnSignin.OnClickAsObservable().Subscribe(_ =>
             {
+                UIMgr.OpenPanel<UILoginPanel>();
                 CloseSelf();
+            });
+
+            BtnSignUp.OnClickAsObservable().Subscribe(_ =>
+            {
+                // do something
             });
         }
-
         protected override void ProcessMsg(int eventId, QFramework.QMsg msg)
         {
+            throw new System.NotImplementedException ();
         }
         
         protected override void OnInit(QFramework.IUIData uiData)
         {
-            mData = uiData as UISettingPanelData ?? new UISettingPanelData();
+            mData = uiData as UIRegisterPanelData ?? new UIRegisterPanelData();
+            // please add init code here
         }
         
         protected override void OnOpen(QFramework.IUIData uiData)

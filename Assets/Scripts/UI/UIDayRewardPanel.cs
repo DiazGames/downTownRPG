@@ -19,33 +19,33 @@ namespace DiazDTRPG
     using QFramework;
     using UniRx;
     
-    
-    public class UISettingPanelData : QFramework.UIPanelData
+    public class UIDayRewardPanelData : QFramework.UIPanelData
     {
     }
     
-    public partial class UISettingPanel : QFramework.UIPanel
+    public partial class UIDayRewardPanel : QFramework.UIPanel
     {
         protected override void RegisterUIEvent()
         {
-            btnClose.OnClickAsObservable().Subscribe(_ =>
-            {
-                CloseSelf();
-            });
-
             Background.OnClickAsObservable().Subscribe(_ =>
             {
                 CloseSelf();
             });
-        }
 
+            BtnClose.OnClickAsObservable().Subscribe(_ =>
+            {
+                CloseSelf();
+            });
+        }
         protected override void ProcessMsg(int eventId, QFramework.QMsg msg)
         {
+            throw new System.NotImplementedException ();
         }
         
         protected override void OnInit(QFramework.IUIData uiData)
         {
-            mData = uiData as UISettingPanelData ?? new UISettingPanelData();
+            mData = uiData as UIDayRewardPanelData ?? new UIDayRewardPanelData();
+            // please add init code here
         }
         
         protected override void OnOpen(QFramework.IUIData uiData)

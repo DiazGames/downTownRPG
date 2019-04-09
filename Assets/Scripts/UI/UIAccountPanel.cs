@@ -19,12 +19,11 @@ namespace DiazDTRPG
     using QFramework;
     using UniRx;
     
-    
-    public class UISettingPanelData : QFramework.UIPanelData
+    public class UIAccountPanelData : QFramework.UIPanelData
     {
     }
     
-    public partial class UISettingPanel : QFramework.UIPanel
+    public partial class UIAccountPanel : QFramework.UIPanel
     {
         protected override void RegisterUIEvent()
         {
@@ -32,20 +31,19 @@ namespace DiazDTRPG
             {
                 CloseSelf();
             });
-
             Background.OnClickAsObservable().Subscribe(_ =>
             {
                 CloseSelf();
             });
         }
-
         protected override void ProcessMsg(int eventId, QFramework.QMsg msg)
         {
+            throw new System.NotImplementedException ();
         }
         
         protected override void OnInit(QFramework.IUIData uiData)
         {
-            mData = uiData as UISettingPanelData ?? new UISettingPanelData();
+            mData = uiData as UIAccountPanelData ?? new UIAccountPanelData();
         }
         
         protected override void OnOpen(QFramework.IUIData uiData)

@@ -29,91 +29,83 @@ namespace DiazDTRPG
         protected override void RegisterUIEvent()
         {
             // 英雄按钮点击
-            MenuHeros.OnClickAsObservable()
-                .Subscribe(_ =>
-                {
-                    Debug.Log("Clicked MenuHeros!");
-                    UIMgr.OpenPanel<UIMyInfoPanel>();
-                });
+            MenuHeros.OnClickAsObservable().Subscribe(_ =>
+            {
+                Debug.Log("Clicked MenuHeros!");
+                UIMgr.OpenPanel<UIMyInfoPanel>();
+            });
             // 队伍按钮点击
-            MenuTeam.OnClickAsObservable()
-                .Subscribe(_ =>
-                {
-                    Debug.Log("Clicked MenuTeam!");
-                    UIMgr.OpenPanel<UIMyInfoPanel>();
-                });
+            MenuTeam.OnClickAsObservable().Subscribe(_ =>
+            {
+                Debug.Log("Clicked MenuTeam!");
+                UIMgr.OpenPanel<UIMyInfoPanel>();
+            });
             // 背包按钮点击
-            MenuBackpack.OnClickAsObservable()
-                .Subscribe(_ =>
-                {
-                    Debug.Log("Clicked MenuBackpack!");
-                    UIMgr.OpenPanel<UIMyInfoPanel>();
-                });
+            MenuBackpack.OnClickAsObservable().Subscribe(_ =>
+            {
+                Debug.Log("Clicked MenuBackpack!");
+                UIMgr.OpenPanel<UIMyInfoPanel>();
+            });
             // 酒馆按钮点击
-            MenuPub.OnClickAsObservable()
-                .Subscribe(_ =>
-                {
-                    Debug.Log("Clicked MenuPub!");
-                });
+            MenuPub.OnClickAsObservable().Subscribe(_ =>
+            {
+                Debug.Log("Clicked MenuPub!");
+            });
             // 道具按钮点击
-            MenuProps.OnClickAsObservable()
-                .Subscribe(_ =>
-                {
-                    Debug.Log("Clicked MenuProps!");
-                    UIMgr.OpenPanel<UIPropPanel>();
-                });
+            MenuProps.OnClickAsObservable().Subscribe(_ =>
+            {
+                Debug.Log("Clicked MenuProps!");
+                UIMgr.OpenPanel<UIPropPanel>();
+            });
             // 任务按钮点击
-            MenuMission.OnClickAsObservable()
-                .Subscribe(_ =>
-                {
-                    Debug.Log("Clicked Mission!");
-                    UIMgr.OpenPanel<UIMissionPanel>();
-                });
+            MenuMission.OnClickAsObservable().Subscribe(_ =>
+            {
+                Debug.Log("Clicked Mission!");
+                UIMgr.OpenPanel<UIMissionPanel>();
+            });
             // 商店按钮点击
-            MenuShop.OnClickAsObservable()
-                .Subscribe(_ =>
-                {
-                    Debug.Log("Clicked MenuShop!");
-                    UIMgr.OpenPanel<UIShopGoldPanel>();
-                });
+            MenuShop.OnClickAsObservable().Subscribe(_ =>
+            {
+                Debug.Log("Clicked MenuShop!");
+                UIMgr.OpenPanel<UIShopGoldPanel>();
+            });
             // 设置按钮点击
-            MenuSetting.OnClickAsObservable()
-                .Subscribe(_ =>
-                {
-                    Debug.Log("Clicked MenuSetting!");
-                    UIMgr.OpenPanel<UISettingPanel>();
-                });
+            MenuSetting.OnClickAsObservable().Subscribe(_ =>
+            {
+                Debug.Log("Clicked MenuSetting!");
+                UIMgr.OpenPanel<UISettingPanel>();
+            });
             // 消息按钮点击
-            MenuMessages.OnClickAsObservable()
-                .Subscribe(_ =>
-                {
-                    Debug.Log("Clicked MenuMessages!");
-                    UIMgr.OpenPanel<UIMessagePanel>();
-                });
+            MenuMessages.OnClickAsObservable().Subscribe(_ =>
+            {
+                Debug.Log("Clicked MenuMessages!");
+                UIMgr.OpenPanel<UIMessagePanel>();
+            });
             // 增加钻石按钮点击
-            btnGemAdd.OnClickAsObservable()
-                .Subscribe(_ =>
-                {
-                    UIMgr.OpenPanel<UIShopGemPanel>();
-                });
+            BtnGemAdd.OnClickAsObservable().Subscribe(_ =>
+            {
+                UIMgr.OpenPanel<UIShopGemPanel>();
+            });
             // 增加金币按钮
-            btnGoldAdd.OnClickAsObservable()
-                .Subscribe(_ =>
-                {
-                    UIMgr.OpenPanel<UIShopGoldPanel>();
-                });
-
-            BtnUserInfo.OnClickAsObservable()
-                .Subscribe(_ =>
-                {
-                    UIMgr.OpenPanel<UIMyInfoPanel>();
-                });
-
-            BtnPlay.OnClickAsObservable()
-                .Subscribe(_ =>
-                {
-                    UIMgr.OpenPanel<UIMapPanel>();
-                });
+            BtnGoldAdd.OnClickAsObservable().Subscribe(_ =>
+            {
+                UIMgr.OpenPanel<UIShopGoldPanel>();
+            });
+            // 用户信息按钮点击
+            BtnUserInfo.OnClickAsObservable().Subscribe(_ =>
+            {
+                UIMgr.OpenPanel<UIMyInfoPanel>();
+            });
+            // 战斗按钮点击
+            BtnPlay.OnClickAsObservable().Subscribe(_ =>
+            {
+                UIMgr.OpenPanel<UIMapPanel>();
+            });
+            // 福利按钮点击
+            MenuFree.OnClickAsObservable().Subscribe(_ =>
+            {
+                UIMgr.OpenPanel<UIFreeRewardPanel>();
+            });
         }
         protected override void ProcessMsg(int eventId, QFramework.QMsg msg)
         {

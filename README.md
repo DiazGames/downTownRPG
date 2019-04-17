@@ -3,9 +3,27 @@ downTownRPG
 
 ## 1. 拼UI
 
+* UIHomePanel
+
+  ![](http://githubresources.oss-cn-shanghai.aliyuncs.com/DownTownRPG/1.Home.jpg?Expires=1555509931&OSSAccessKeyId=TMP.AQFj3k6017czSPQZtVZbo2Hjl5nYVb4vOlpoa5Yyji3saWucjfG0IvMh65ReAAAwLAIUYGgEYYHcv2UFwn3_h_QlDPMS6V0CFGZIoqVPPxIBAgDFho5t5rd-qUal&Signature=gvDJQX5oAn7DSW3jUDslp%2FxUhHE%3D)
+
+* UIShopGoldPanel
+
+  ![](http://githubresources.oss-cn-shanghai.aliyuncs.com/DownTownRPG/2.Shop.jpg?Expires=1555510103&OSSAccessKeyId=TMP.AQFj3k6017czSPQZtVZbo2Hjl5nYVb4vOlpoa5Yyji3saWucjfG0IvMh65ReAAAwLAIUYGgEYYHcv2UFwn3_h_QlDPMS6V0CFGZIoqVPPxIBAgDFho5t5rd-qUal&Signature=ffCLTbhpGUwwhiBqnGFgDZixC5A%3D)
+
+* UIMapPanel
+
+  ![](http://githubresources.oss-cn-shanghai.aliyuncs.com/DownTownRPG/3.Map.jpg?Expires=1555510223&OSSAccessKeyId=TMP.AQFj3k6017czSPQZtVZbo2Hjl5nYVb4vOlpoa5Yyji3saWucjfG0IvMh65ReAAAwLAIUYGgEYYHcv2UFwn3_h_QlDPMS6V0CFGZIoqVPPxIBAgDFho5t5rd-qUal&Signature=w2ImQuO4MWSnyKluHwKhYd40gYk%3D)
+
+* UIMapStagesPanel
+
+  ![](http://githubresources.oss-cn-shanghai.aliyuncs.com/DownTownRPG/4.MapStages.jpg?Expires=1555510329&OSSAccessKeyId=TMP.AQFj3k6017czSPQZtVZbo2Hjl5nYVb4vOlpoa5Yyji3saWucjfG0IvMh65ReAAAwLAIUYGgEYYHcv2UFwn3_h_QlDPMS6V0CFGZIoqVPPxIBAgDFho5t5rd-qUal&Signature=o7qxhOiIbmLNy6wrQwHPlRWr3Ws%3D)
+
 * UIGamePanel
 
+  ![](http://githubresources.oss-cn-shanghai.aliyuncs.com/DownTownRPG/5.GamePanel.jpg?Expires=1555510455&OSSAccessKeyId=TMP.AQFj3k6017czSPQZtVZbo2Hjl5nYVb4vOlpoa5Yyji3saWucjfG0IvMh65ReAAAwLAIUYGgEYYHcv2UFwn3_h_QlDPMS6V0CFGZIoqVPPxIBAgDFho5t5rd-qUal&Signature=o4j%2FK7MAKcP36qIiwXdDIM%2FaZmA%3D)
 
+  
 
 
 

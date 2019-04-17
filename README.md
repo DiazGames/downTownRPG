@@ -1,7 +1,7 @@
 # downTownRPG
 downTownRPG
 
-## 1. 拼UI
+## 1. 拼UI(部分)
 
 * UIHomePanel
 
@@ -23,9 +23,9 @@ downTownRPG
 
   ![](http://githubresources.oss-cn-shanghai.aliyuncs.com/DownTownRPG/5.GamePanel.jpg?Expires=1555510455&OSSAccessKeyId=TMP.AQFj3k6017czSPQZtVZbo2Hjl5nYVb4vOlpoa5Yyji3saWucjfG0IvMh65ReAAAwLAIUYGgEYYHcv2UFwn3_h_QlDPMS6V0CFGZIoqVPPxIBAgDFho5t5rd-qUal&Signature=o4j%2FK7MAKcP36qIiwXdDIM%2FaZmA%3D)
 
-  
+* UIFreeRewardPanel
 
-
+  ![](http://githubresources.oss-cn-shanghai.aliyuncs.com/DownTownRPG/6.UIFreeRewardPanel.jpg?Expires=1555511137&OSSAccessKeyId=TMP.AQFj3k6017czSPQZtVZbo2Hjl5nYVb4vOlpoa5Yyji3saWucjfG0IvMh65ReAAAwLAIUYGgEYYHcv2UFwn3_h_QlDPMS6V0CFGZIoqVPPxIBAgDFho5t5rd-qUal&Signature=0JLHS7okpT6j9welKS%2FNH3TnKJc%3D)
 
 
 

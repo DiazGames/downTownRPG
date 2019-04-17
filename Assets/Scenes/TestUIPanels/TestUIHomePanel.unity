@@ -156,7 +156,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &546222068
+--- !u!1001 &1243926441
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -252,14 +252,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1642131772563134, guid: c9fce7e12811742579230b00f7345197, type: 2}
-      propertyPath: m_Name
-      value: BtnGemAdd
-      objectReference: {fileID: 0}
-    - target: {fileID: 1780821071962666, guid: c9fce7e12811742579230b00f7345197, type: 2}
-      propertyPath: m_Name
-      value: BtnGoldAdd
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9fce7e12811742579230b00f7345197, type: 2}

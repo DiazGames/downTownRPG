@@ -49,7 +49,7 @@ namespace DiazDTRPG
             // 酒馆按钮点击
             MenuPub.OnClickAsObservable().Subscribe(_ =>
             {
-                Debug.Log("Clicked MenuPub!");
+                UIMgr.OpenPanel<UIHeroPubPanel>();
             });
             // 道具按钮点击
             MenuProps.OnClickAsObservable().Subscribe(_ =>

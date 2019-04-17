@@ -19,38 +19,37 @@ namespace DiazDTRPG
     using QFramework;
     using UniRx;
     
-    public class UIGamePausePanelData : QFramework.UIPanelData
+    public class UIHeroPubPanelData : QFramework.UIPanelData
     {
     }
     
-    public partial class UIGamePausePanel : QFramework.UIPanel
+    public partial class UIHeroPubPanel : QFramework.UIPanel
     {
         protected override void RegisterUIEvent()
         {
-            BtnContinue.OnClickAsObservable().Subscribe(_ =>
+            BtnClose.OnClickAsObservable().Subscribe(_ =>
             {
-                //UIMgr.GetPanel<UIGamePanel>().mData.ShowCharacters = true;
-                UIMgr.GetPanel<UIGamePanel>().Transform.Find("Characters").gameObject.SetActive(true);
-                UIMgr.GetPanel<UIGamePanel>().Transform.Find("Emenys").gameObject.SetActive(true);
                 CloseSelf();
             });
 
-            BtnRestart.OnClickAsObservable().Subscribe(_ =>
+            BtnGemAdd.OnClickAsObservable().Subscribe(_ =>
             {
-                //UIMgr.GetPanel<UIGamePanel>().mData.ShowCharacters = true;
-                UIMgr.GetPanel<UIGamePanel>().Transform.Find("Characters").gameObject.SetActive(true);
-                UIMgr.GetPanel<UIGamePanel>().Transform.Find("Emenys").gameObject.SetActive(true);
-                CloseSelf();
-            });
-            BtnGiveUp.OnClickAsObservable().Subscribe(_ =>
-            {
-                CloseSelf();
-                UIMgr.ClosePanel<UIGamePanel>();
+                UIMgr.OpenPanel<UIShopGemPanel>();
             });
 
-            BtnSetting.OnClickAsObservable().Subscribe(_ =>
+            BtnGoldAdd.OnClickAsObservable().Subscribe(_ =>
             {
-                UIMgr.OpenPanel<UIGamePauseSettingPanel>();
+                UIMgr.OpenPanel<UIShopGoldPanel>();
+            });
+
+            BtnFree.OnClickAsObservable().Subscribe(_ =>
+            {
+                // do something
+            });
+
+            BtnGem.OnClickAsObservable().Subscribe(_ =>
+            {
+                // do something
             });
         }
         protected override void ProcessMsg(int eventId, QFramework.QMsg msg)
@@ -60,7 +59,7 @@ namespace DiazDTRPG
         
         protected override void OnInit(QFramework.IUIData uiData)
         {
-            mData = uiData as UIGamePausePanelData ?? new UIGamePausePanelData();
+            mData = uiData as UIHeroPubPanelData ?? new UIHeroPubPanelData();
             // please add init code here
         }
         
@@ -70,8 +69,6 @@ namespace DiazDTRPG
         
         protected override void OnShow()
         {
-
-               
         }
         
         protected override void OnHide()
@@ -80,7 +77,6 @@ namespace DiazDTRPG
         
         protected override void OnClose()
         {
-
         }
     }
 }

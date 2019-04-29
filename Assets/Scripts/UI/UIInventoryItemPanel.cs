@@ -19,22 +19,16 @@ namespace DiazDTRPG
     using QFramework;
     using UniRx;
     
-    public class UIShopGemPanelData : QFramework.UIPanelData
+    public class UIInventoryItemPanelData : QFramework.UIPanelData
     {
+        public Item item;
     }
     
-    public partial class UIShopGemPanel : QFramework.UIPanel
+    public partial class UIInventoryItemPanel : QFramework.UIPanel
     {
         protected override void RegisterUIEvent()
         {
-            BtnGold.OnClickAsObservable()
-                .Subscribe(_ =>
-                {
-                    UIMgr.OpenPanel<UIShopGoldPanel>();
-                    CloseSelf();
-                });
-
-            Background.OnClickAsObservable().Subscribe(_ =>
+            UITopStatus.BtnClose.OnClickAsObservable().Subscribe(_ =>
             {
                 CloseSelf();
             });
@@ -47,9 +41,10 @@ namespace DiazDTRPG
         
         protected override void OnInit(QFramework.IUIData uiData)
         {
-            mData = uiData as UIShopGemPanelData ?? new UIShopGemPanelData();
+            mData = uiData as UIInventoryItemPanelData ?? new UIInventoryItemPanelData();
             // please add init code here
-            ShowInventoryList();
+
+            TxtItemDes.text = mData.item.Name;
         }
         
         protected override void OnOpen(QFramework.IUIData uiData)
@@ -66,34 +61,6 @@ namespace DiazDTRPG
         
         protected override void OnClose()
         {
-        }
-
-        /// <summary>
-        /// 显示背包列表
-        /// </summary>
-        public void ShowInventoryList()
-        {
-
-            foreach (ProductGemModel model in ProductGemData.ProductGemDataList)
-            {
-                UIShopGem.Instantiate()
-                .Parent(Contents)
-                .LocalIdentity()
-                .ApplySelfTo(self =>
-                {
-                    self.ProductGemModel = model;
-                    self.Show();
-                });
-            }
-
-        }
-
-        /// <summary>
-        /// 更新状态条上的数据
-        /// </summary>
-        public void UpdateTopStautsValue()
-        {
-            UITopStatus.ShowValueChaged();
         }
     }
 }

@@ -18,28 +18,45 @@ namespace DiazDTRPG
     using UnityEngine.UI;
     using QFramework;
     using UniRx;
-    
-    public class UIShopGemPanelData : QFramework.UIPanelData
+
+    public class DataUpdateSuccessModel
     {
+        /// <summary>
+        /// 标题
+        /// </summary>
+        public string StrTitle { get; set; }
+        /// <summary>
+        /// 描述
+        /// </summary>
+        public string StrDesc { get; set; }
+
+        /// <summary>
+        /// 是否成功
+        /// </summary>
+        /// <value><c>true</c> if is succeed; otherwise, <c>false</c>.</value>
+        public bool IsSucceed { get; set; }
+    }
+
+
+    public class UIDataUpdateSucceedPanelData : QFramework.UIPanelData
+    {
+        public DataUpdateSuccessModel SuccessModel;
     }
     
-    public partial class UIShopGemPanel : QFramework.UIPanel
+    public partial class UIDataUpdateSucceedPanel : QFramework.UIPanel
     {
         protected override void RegisterUIEvent()
         {
-            BtnGold.OnClickAsObservable()
-                .Subscribe(_ =>
-                {
-                    UIMgr.OpenPanel<UIShopGoldPanel>();
-                    CloseSelf();
-                });
+            BtnClose.OnClickAsObservable().Subscribe(_ =>
+            {
+                CloseSelf();
+            });
 
-            Background.OnClickAsObservable().Subscribe(_ =>
+            BtnOK.OnClickAsObservable().Subscribe(_ =>
             {
                 CloseSelf();
             });
         }
-
         protected override void ProcessMsg(int eventId, QFramework.QMsg msg)
         {
             throw new System.NotImplementedException ();
@@ -47,11 +64,21 @@ namespace DiazDTRPG
         
         protected override void OnInit(QFramework.IUIData uiData)
         {
-            mData = uiData as UIShopGemPanelData ?? new UIShopGemPanelData();
+            mData = uiData as UIDataUpdateSucceedPanelData ?? new UIDataUpdateSucceedPanelData();
             // please add init code here
-            ShowInventoryList();
+
+            TxtTile.text = mData.SuccessModel.StrTitle;
+            TxtDesc.text = mData.SuccessModel.StrDesc;
+            if (mData.SuccessModel.IsSucceed)
+            {
+                ImgTitle.sprite = Resources.Load<Sprite>("Images/MsgSucceed");
+            }
+            else
+            {
+                ImgTitle.sprite = Resources.Load<Sprite>("Images/MsgFailure"); 
+            }
         }
-        
+
         protected override void OnOpen(QFramework.IUIData uiData)
         {
         }
@@ -66,34 +93,6 @@ namespace DiazDTRPG
         
         protected override void OnClose()
         {
-        }
-
-        /// <summary>
-        /// 显示背包列表
-        /// </summary>
-        public void ShowInventoryList()
-        {
-
-            foreach (ProductGemModel model in ProductGemData.ProductGemDataList)
-            {
-                UIShopGem.Instantiate()
-                .Parent(Contents)
-                .LocalIdentity()
-                .ApplySelfTo(self =>
-                {
-                    self.ProductGemModel = model;
-                    self.Show();
-                });
-            }
-
-        }
-
-        /// <summary>
-        /// 更新状态条上的数据
-        /// </summary>
-        public void UpdateTopStautsValue()
-        {
-            UITopStatus.ShowValueChaged();
         }
     }
 }

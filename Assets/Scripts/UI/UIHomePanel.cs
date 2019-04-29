@@ -44,7 +44,7 @@ namespace DiazDTRPG
             MenuBackpack.OnClickAsObservable().Subscribe(_ =>
             {
                 Debug.Log("Clicked MenuBackpack!");
-                UIMgr.OpenPanel<UIMyInfoPanel>();
+                UIMgr.OpenPanel<UIInventoryNewPanel>();
             });
             // 酒馆按钮点击
             MenuPub.OnClickAsObservable().Subscribe(_ =>

@@ -1,0 +1,46 @@
+﻿[
+    {
+      "ProductID":1,
+      "ProductName":"180钻石",
+      "ProductPurpleSprite": "",
+      "ProductPurpleDesc": "",
+      "ProductDesc": "180钻石",
+      "ProductSprite": "Images/Product/shop_img_gem_01",
+      "ProductNum": 180,
+      "ProductBouns": 0,
+      "ProductPrice": 2
+    },
+    {
+      "ProductID": 2,
+      "ProductName": "450钻石",
+      "ProductPurpleSprite": "Images/Product/shop_label_red",
+      "ProductPurpleDesc": "HOT",
+      "ProductDesc": "450钻石",
+      "ProductSprite": "Images/Product/shop_img_gem_02",
+      "ProductNum": 450,
+      "ProductBouns": 5,
+      "ProductPrice": 5
+    },
+    {
+      "ProductID": 3,
+      "ProductName": "1000钻石",
+      "ProductPurpleSprite": "Images/Product/shop_label_purple",
+      "ProductPurpleDesc": "BEST",
+      "ProductDesc": "1000钻石",
+      "ProductSprite": "Images/Product/shop_img_gem_03",
+      "ProductNum": 1000,
+      "ProductBouns": 15,
+      "ProductPrice": 10
+    },
+    {
+      "ProductID": 4,
+      "ProductName": "3250钻石",
+      "ProductPurpleSprite": "",
+      "ProductPurpleDesc": "",
+      "ProductDesc": "3250钻石",
+      "ProductSprite": "Images/Product/shop_img_gem_04",
+      "ProductNum": 3250,
+      "ProductBouns": 20,
+      "ProductPrice": 33
+    }
+]

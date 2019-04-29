@@ -18,36 +18,34 @@ namespace DiazDTRPG
     using UnityEngine.UI;
     
     
-    public partial class UIShopGemPanel
+    public partial class UIDataUpdateSucceedPanel
     {
         
-        public const string NAME = "UIShopGemPanel";
+        public const string NAME = "UIDataUpdateSucceedPanel";
+        
+        // 失败成功图片
+        [SerializeField()]
+        public Image ImgTitle;
         
         [SerializeField()]
-        public Button Background;
+        public Text TxtTile;
         
         [SerializeField()]
-        public UITopStatus UITopStatus;
+        public Button BtnClose;
         
         [SerializeField()]
-        public Button BtnDiamand;
+        public Text TxtDesc;
         
         [SerializeField()]
-        public Button BtnGold;
+        public Button BtnOK;
         
-        [SerializeField()]
-        public RectTransform Contents;
+        private UIDataUpdateSucceedPanelData mPrivateData = null;
         
-        [SerializeField()]
-        public UIShopGem UIShopGem;
-        
-        private UIShopGemPanelData mPrivateData = null;
-        
-        public UIShopGemPanelData mData
+        public UIDataUpdateSucceedPanelData mData
         {
             get
             {
-                return mPrivateData ?? (mPrivateData = new UIShopGemPanelData());
+                return mPrivateData ?? (mPrivateData = new UIDataUpdateSucceedPanelData());
             }
             set
             {
@@ -58,12 +56,11 @@ namespace DiazDTRPG
         
         protected override void ClearUIComponents()
         {
-            Background = null;
-            UITopStatus = null;
-            BtnDiamand = null;
-            BtnGold = null;
-            Contents = null;
-            UIShopGem = null;
+            ImgTitle = null;
+            TxtTile = null;
+            BtnClose = null;
+            TxtDesc = null;
+            BtnOK = null;
             mData = null;
         }
     }

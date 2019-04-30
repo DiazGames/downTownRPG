@@ -480,7 +480,7 @@ GameObject:
   - component: {fileID: 7621192313816871019}
   - component: {fileID: 7975578316365007153}
   - component: {fileID: 2120111000670462563}
-  - component: {fileID: 7960006285871919663}
+  - component: {fileID: 2058170584310985870}
   m_Layer: 5
   m_Name: UIShopGem
   m_TagString: Untagged
@@ -547,7 +547,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &7960006285871919663
+--- !u!114 &2058170584310985870
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -556,12 +556,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 4102820640767751982}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4211833ca4e7a4984b2d973425a62933, type: 3}
+  m_Script: {fileID: 11500000, guid: 94e78047dbe0946a2a1b22e6aa5a94f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MarkType: 1
-  CustomComponentName: UIShopGem
-  CustomComment: 
+  BtnBuy: {fileID: 7583107420728294541}
+  TxtBtnBuyNum: {fileID: 3805883277313918726}
+  ImgBtnIcon: {fileID: 3207430973556210592}
+  ImgProduct: {fileID: 5104444396666745844}
+  TxtProductNum: {fileID: 1948100014725277915}
+  TxtBonus: {fileID: 618240496656115523}
+  ImgShopLabelPurple: {fileID: 7255406922207870150}
+  TxtShopPurple: {fileID: 530279298958541061}
 --- !u!1 &4953141041743491217
 GameObject:
   m_ObjectHideFlags: 0

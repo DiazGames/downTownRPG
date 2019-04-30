@@ -191,6 +191,11 @@ namespace DiazDTRPG
             foreach (JSONObject item in json.list)
             {
                 int ProductID = (int)item.GetField("ProductID").n;
+                string ProductiOSID = item.GetField("ProductiOSID").str;
+                string ProductGoogleID = item.GetField("ProductGoogleID").str;
+                string ProductSamsungID = item.GetField("ProductSamsungID").str;
+                string ProductAmazonID = item.GetField("ProductAmazonID").str;
+                string ProductXiaomiID = item.GetField("ProductXiaomiID").str;
                 string ProductName = item.GetField("ProductName").str;
                 string ProductPurpleSprite = item.GetField("ProductPurpleSprite").str;
                 string ProductPurpleDesc = item.GetField("ProductPurpleDesc").str;
@@ -198,16 +203,61 @@ namespace DiazDTRPG
                 string ProductSprite = item.GetField("ProductSprite").str;
                 int ProductNum = (int)item.GetField("ProductNum").n;
                 int ProductBouns = (int)item.GetField("ProductBouns").n;
-                int ProductPrice = (int)item.GetField("ProductPrice").n;
+                float ProductPrice = item.GetField("ProductPrice").f;
 
-                ProductGemModel gemModel  = new ProductGemModel(ProductID, ProductName, ProductPurpleSprite, ProductPurpleDesc, 
-                ProductDesc, ProductSprite, ProductNum, ProductBouns, ProductPrice);
+                ProductGemModel gemModel  = new ProductGemModel(ProductID, ProductiOSID, ProductGoogleID, ProductSamsungID, ProductAmazonID, ProductXiaomiID,
+                    ProductName, ProductPurpleSprite, ProductPurpleDesc, 
+                    ProductDesc, ProductSprite, ProductNum, ProductBouns, ProductPrice);
 
                 newItemList.Add(gemModel);
             }
 
-            Debug.Log("product ======== " + newItemList.Count);
             return newItemList;
         }
     }
+
+
+    /// <summary>
+    /// 金币商品，从productGold.json 中读取
+    /// </summary>
+    public static class ProductGoldData
+    {
+        public static List<ProductGoldModel> ProductGoldDataList
+        {
+            get
+            {
+                return GetGoldProducts();
+            }
+        }
+
+        private static List<ProductGoldModel> GetGoldProducts()
+        {
+            List<ProductGoldModel> newItemList = new List<ProductGoldModel>();
+            string jsonContent = Resources.Load<TextAsset>("Json/productGold").text;
+            JSONObject json = new JSONObject(jsonContent);
+            foreach (JSONObject item in json.list)
+            {
+                int ProductID = (int)item.GetField("ProductGoldID").n;
+                string ProductName = item.GetField("ProductGoldName").str;
+                string ProductPurpleSprite = item.GetField("ProductGoldPurpleSprite").str;
+                string ProductPurpleDesc = item.GetField("ProductGoldPurpleDesc").str;
+                string ProductDesc = item.GetField("ProductGoldDesc").str;
+                string ProductSprite = item.GetField("ProductGoldSprite").str;
+                int ProductNum = (int)item.GetField("ProductGoldNum").n;
+                int ProductBouns = (int)item.GetField("ProductGoldBouns").n;
+                int ProductPrice = (int)item.GetField("ProductGoldPrice").n;
+
+                ProductGoldModel goldModel = new ProductGoldModel(ProductID, 
+                    ProductName, ProductPurpleSprite, ProductPurpleDesc,
+                    ProductDesc, ProductSprite, ProductNum, ProductBouns, ProductPrice);
+
+                newItemList.Add(goldModel);
+            }
+
+            return newItemList;
+        }
+    }
+
+
+
 }

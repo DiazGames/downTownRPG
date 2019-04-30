@@ -16,13 +16,12 @@ namespace DiazDTRPG
         public ProductGemModel ProductGemModel { get; set; }
         public void Awake()
 		{
-            //[SerializeField] public Button BtnBuy;
             TxtBtnBuyNum.text = ProductGemModel.ProductPrice.ToString();
             ImgProduct.sprite = Resources.Load<Sprite>(ProductGemModel.ProductSprite);
             switch (ProductGemModel.ProductID)
             {
                 case 1:
-                    ImgProduct.LocalScale(0.3f, 0.3f, 0.3f);
+                    ImgProduct.LocalScale(0.5f, 0.5f, 0.5f);
                     break;
                 case 2:
                     ImgProduct.LocalScale(0.5f, 0.5f, 0.5f);
@@ -38,12 +37,12 @@ namespace DiazDTRPG
             TxtProductNum.text = ProductGemModel.ProductNum.ToString();
             if (ProductGemModel.ProductBouns > 0)
             {
-                TxtBouns.Show();
-                TxtBouns.text = "Bonus +" + ProductGemModel.ProductBouns.ToString() + "%";
+                TxtBonus.Show();
+                TxtBonus.text = "Bonus +" + ProductGemModel.ProductBouns.ToString() + "%";
             }
             else
             {
-                TxtBouns.Hide();
+                TxtBonus.Hide();
             }
             if(ProductGemModel.ProductPurpleSprite.Length > 0)
             {
@@ -67,6 +66,17 @@ namespace DiazDTRPG
 
                 // 更新UI
                 UIMgr.GetPanel<UIShopGemPanel>().UpdateTopStautsValue();
+
+                // 跳转到成功界面
+                UIMgr.OpenPanel<UIDataUpdateSucceedPanel>(new UIDataUpdateSucceedPanelData
+                {
+                    SuccessModel = new DataUpdateSuccessModel
+                    {
+                        StrTitle = "购买成功",
+                        StrDesc = "成功购买 " + ProductGemModel.ProductNum + " 颗钻石！",
+                        IsSucceed = true
+                    }
+                });
             });
 
         }

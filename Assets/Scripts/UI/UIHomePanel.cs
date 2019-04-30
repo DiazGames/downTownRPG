@@ -116,6 +116,7 @@ namespace DiazDTRPG
         {
             mData = uiData as UIHomePanelData ?? new UIHomePanelData();
             // please add init code here
+            UpdateTopStautsValue();
         }
         
         protected override void OnOpen(QFramework.IUIData uiData)
@@ -132,6 +133,15 @@ namespace DiazDTRPG
         
         protected override void OnClose()
         {
+        }
+
+        /// <summary>
+        /// 更新状态条上的数据
+        /// </summary>
+        public void UpdateTopStautsValue()
+        {
+            TxtGemNum.text = GameData.GemCount.ToString();
+            TxtGoldNum.text = GameData.GoldCount.ToString();
         }
     }
 }

@@ -1,6 +1,11 @@
 ﻿[
     {
       "ProductID":1,
+      "ProductiOSID": "",
+      "ProductGoogleID": "",
+      "ProductSamsungID": "",
+      "ProductAmazonID": "",
+      "ProductXiaomiID": "",
       "ProductName":"180钻石",
       "ProductPurpleSprite": "",
       "ProductPurpleDesc": "",
@@ -8,10 +13,15 @@
       "ProductSprite": "Images/Product/shop_img_gem_01",
       "ProductNum": 180,
       "ProductBouns": 0,
-      "ProductPrice": 2
+      "ProductPrice": 2.09
     },
     {
       "ProductID": 2,
+      "ProductiOSID": "",
+      "ProductGoogleID": "",
+      "ProductSamsungID": "",
+      "ProductAmazonID": "",
+      "ProductXiaomiID": "",
       "ProductName": "450钻石",
       "ProductPurpleSprite": "Images/Product/shop_label_red",
       "ProductPurpleDesc": "HOT",
@@ -19,10 +29,15 @@
       "ProductSprite": "Images/Product/shop_img_gem_02",
       "ProductNum": 450,
       "ProductBouns": 5,
-      "ProductPrice": 5
+      "ProductPrice": 5.99
     },
     {
       "ProductID": 3,
+      "ProductiOSID": "",
+      "ProductGoogleID": "",
+      "ProductSamsungID": "",
+      "ProductAmazonID": "",
+      "ProductXiaomiID": "",
       "ProductName": "1000钻石",
       "ProductPurpleSprite": "Images/Product/shop_label_purple",
       "ProductPurpleDesc": "BEST",
@@ -30,10 +45,15 @@
       "ProductSprite": "Images/Product/shop_img_gem_03",
       "ProductNum": 1000,
       "ProductBouns": 15,
-      "ProductPrice": 10
+      "ProductPrice": 10.99
     },
     {
       "ProductID": 4,
+      "ProductiOSID": "",
+      "ProductGoogleID": "",
+      "ProductSamsungID": "",
+      "ProductAmazonID": "",
+      "ProductXiaomiID": "",
       "ProductName": "3250钻石",
       "ProductPurpleSprite": "",
       "ProductPurpleDesc": "",
@@ -41,6 +61,6 @@
       "ProductSprite": "Images/Product/shop_img_gem_04",
       "ProductNum": 3250,
       "ProductBouns": 20,
-      "ProductPrice": 33
+      "ProductPrice": 33.99
     }
 ]

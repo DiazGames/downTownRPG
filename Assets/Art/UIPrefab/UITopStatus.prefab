@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 3045217740471718369}
   - component: {fileID: 1457717122846966039}
   - component: {fileID: 5114310998293772326}
-  - component: {fileID: 6410795513904731407}
+  - component: {fileID: 7158495583282827855}
   m_Layer: 5
   m_Name: UITopStatus
   m_TagString: Untagged
@@ -509,7 +509,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &6410795513904731407
+--- !u!114 &7158495583282827855
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -518,12 +518,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4086753499357604461}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4211833ca4e7a4984b2d973425a62933, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b0d62709a15d4231bd530a19d4bb4e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MarkType: 1
-  CustomComponentName: UITopStatus
-  CustomComment: 
+  BtnClose: {fileID: 371384695794784109}
+  TxtGoldNumber: {fileID: 3601736482387469459}
+  BtnGoldAdd: {fileID: 9092351327902076680}
+  TxtGemNumber: {fileID: 6018564773072202069}
+  BtnGemAdd: {fileID: 3958127147332345753}
 --- !u!1 &4214679700626470157
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,7 +808,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -54, y: -56}
+  m_AnchoredPosition: {x: -81, y: -56}
   m_SizeDelta: {x: 104, y: 116}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4159703493545901991

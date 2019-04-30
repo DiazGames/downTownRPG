@@ -8,7 +8,7 @@ using QFramework;
 
 namespace DiazDTRPG
 {
-	public partial class UIShopGem
+	public partial class UIShopGold
 	{
 		[SerializeField] public Button BtnBuy;
 		[SerializeField] public Text TxtBtnBuyNum;
@@ -16,8 +16,8 @@ namespace DiazDTRPG
 		[SerializeField] public Image ImgProduct;
 		[SerializeField] public Text TxtProductNum;
 		[SerializeField] public Text TxtBonus;
-		[SerializeField] public Image ImgShopLabelPurple;
-		[SerializeField] public Text TxtShopPurple;
+		[SerializeField] public Image ImgShopLabel;
+		[SerializeField] public Text TxtShopLabel;
 
 		public void Clear()
 		{
@@ -27,13 +27,13 @@ namespace DiazDTRPG
 			ImgProduct = null;
 			TxtProductNum = null;
 			TxtBonus = null;
-			ImgShopLabelPurple = null;
-			TxtShopPurple = null;
+			ImgShopLabel = null;
+			TxtShopLabel = null;
 		}
 
 		public override string ComponentName
 		{
-			get { return "UIShopGem";}
+			get { return "UIShopGold";}
 		}
 	}
 }

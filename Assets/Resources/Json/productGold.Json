@@ -1,0 +1,46 @@
+﻿[
+    {
+      "ProductGoldID":1,
+      "ProductGoldName": "1000金币",
+      "ProductGoldPurpleSprite": "",
+      "ProductGoldPurpleDesc": "",
+      "ProductGoldDesc": "1000金币",
+      "ProductGoldSprite": "Images/Product/shop_img_coin_01",
+      "ProductGoldNum": 1000,
+      "ProductGoldBouns": 0,
+      "ProductGoldPrice": 10
+    },
+    {
+      "ProductGoldID": 2,
+      "ProductGoldName": "6300金币",
+      "ProductGoldPurpleSprite": "Images/Product/shop_label_red",
+      "ProductGoldPurpleDesc": "HOT",
+      "ProductGoldDesc": "6300金币",
+      "ProductGoldSprite": "Images/Product/shop_img_coin_02",
+      "ProductGoldNum": 6300,
+      "ProductGoldBouns": 5,
+      "ProductGoldPrice": 60
+    },
+    {
+      "ProductGoldID": 3,
+      "ProductGoldName": "27600金币",
+      "ProductGoldPurpleSprite": "Images/Product/shop_label_purple",
+      "ProductGoldPurpleDesc": "BEST",
+      "ProductGoldDesc": "27600金币",
+      "ProductGoldSprite": "Images/Product/shop_img_coin_03",
+      "ProductGoldNum": 27600,
+      "ProductGoldBouns": 15,
+      "ProductGoldPrice": 120
+    },
+    {
+      "ProductGoldID": 4,
+      "ProductGoldName": "57600金币",
+      "ProductGoldPurpleSprite": "",
+      "ProductGoldPurpleDesc": "",
+      "ProductGoldDesc": "57600金币",
+      "ProductGoldSprite": "Images/Product/shop_img_coin_04",
+      "ProductGoldNum": 57600,
+      "ProductGoldBouns": 20,
+      "ProductGoldPrice": 250
+    }
+]

@@ -27,13 +27,19 @@ namespace DiazDTRPG
         public Button Background;
         
         [SerializeField()]
+        public UITopStatus UITopStatus;
+        
+        [SerializeField()]
         public Button BtnGold;
         
         [SerializeField()]
         public Button BtnDiamand;
         
         [SerializeField()]
-        public Button BtnClose;
+        public RectTransform Contents;
+        
+        [SerializeField()]
+        public UIShopGold UIShopGold;
         
         private UIShopGoldPanelData mPrivateData = null;
         
@@ -53,9 +59,11 @@ namespace DiazDTRPG
         protected override void ClearUIComponents()
         {
             Background = null;
+            UITopStatus = null;
             BtnGold = null;
             BtnDiamand = null;
-            BtnClose = null;
+            Contents = null;
+            UIShopGold = null;
             mData = null;
         }
     }

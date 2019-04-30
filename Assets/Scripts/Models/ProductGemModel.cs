@@ -7,6 +7,13 @@ namespace DiazDTRPG
     public class ProductGemModel
     {
         public int ProductID { get; set; }
+
+        public string ProductiOSID { get; set; }
+        public string ProductGoogleID { get; set; }
+        public string ProductSamsungID { get; set; }
+        public string ProductAmazonID { get; set; }
+        public string ProductXiaomiID { get; set; }
+
         public string ProductName { get; set; }
 
         /// <summary>
@@ -48,16 +55,23 @@ namespace DiazDTRPG
         /// 商品价格
         /// </summary>
         /// <value>The capacity.</value>
-        public int ProductPrice { get; set; }
+        public float ProductPrice { get; set; }
 
         public ProductGemModel(string productID)
         {
             ProductID = -1;
         }
 
-        public ProductGemModel(int productID, string productName, string productPurpleSprite, string productPurpleDesc, string productDesc, string productSprite, int productNum, int productBouns, int productPrice)
+        public ProductGemModel(int productID, string productiOSID, string productGoogleID, string productSamsungID, string productAmazonID, string productXiaomiID,
+        string productName, string productPurpleSprite, string productPurpleDesc, string productDesc, 
+            string productSprite, int productNum, int productBouns, float productPrice)
         {
             ProductID = productID;
+            ProductiOSID = productiOSID;
+            ProductGoogleID = productGoogleID;
+            ProductSamsungID = productSamsungID;
+            ProductAmazonID = productAmazonID;
+            ProductXiaomiID = productXiaomiID;
             ProductName = productName;
             ProductPurpleSprite = productPurpleSprite;
             ProductPurpleDesc = productPurpleDesc;

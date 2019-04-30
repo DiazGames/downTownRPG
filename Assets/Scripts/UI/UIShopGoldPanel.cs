@@ -34,11 +34,6 @@ namespace DiazDTRPG
                     UIMgr.OpenPanel<UIShopGemPanel>();
                     CloseSelf();
                 });
-            BtnClose.OnClickAsObservable()
-                .Subscribe(_ =>
-                {
-                    CloseSelf();
-                });
 
             Background.OnClickAsObservable().Subscribe(_ =>
             {
@@ -54,6 +49,7 @@ namespace DiazDTRPG
         {
             mData = uiData as UIShopGoldPanelData ?? new UIShopGoldPanelData();
             // please add init code here
+            ShowProductGemList();
         }
         
         protected override void OnOpen(QFramework.IUIData uiData)
@@ -70,6 +66,36 @@ namespace DiazDTRPG
         
         protected override void OnClose()
         {
+        }
+
+        /// <summary>
+        /// 显示金币商品列表
+        /// </summary>
+        public void ShowProductGemList()
+        {
+            foreach (ProductGoldModel model in ProductGoldData.ProductGoldDataList)
+            {
+                UIShopGold.Instantiate()
+                .Parent(Contents)
+                .LocalIdentity()
+                .ApplySelfTo(self =>
+                {
+                    self.ProductGoldModel = model;
+                    self.Show();
+                });
+            }
+
+        }
+
+        /// <summary>
+        /// 更新状态条上的数据
+        /// </summary>
+        public void UpdateTopStautsValue()
+        {
+            // 更新本页数据
+            UITopStatus.ShowValueChaged();
+            // 更新首页数据
+            UIMgr.GetPanel<UIHomePanel>().UpdateTopStautsValue();
         }
     }
 }

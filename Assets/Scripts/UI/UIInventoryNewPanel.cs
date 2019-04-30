@@ -276,7 +276,10 @@ namespace DiazDTRPG
         /// </summary>
         public void UpdateTopStautsValue()
         {
+            // 更新本页数据
             UITopStatus.ShowValueChaged();
+            // 更新首页数据
+            UIMgr.GetPanel<UIHomePanel>().UpdateTopStautsValue();
         }
 
     }

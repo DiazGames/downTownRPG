@@ -49,7 +49,7 @@ namespace DiazDTRPG
         {
             mData = uiData as UIShopGemPanelData ?? new UIShopGemPanelData();
             // please add init code here
-            ShowInventoryList();
+            ShowProductGemList();
         }
         
         protected override void OnOpen(QFramework.IUIData uiData)
@@ -69,9 +69,9 @@ namespace DiazDTRPG
         }
 
         /// <summary>
-        /// 显示背包列表
+        /// 显示钻石商品列表
         /// </summary>
-        public void ShowInventoryList()
+        public void ShowProductGemList()
         {
 
             foreach (ProductGemModel model in ProductGemData.ProductGemDataList)
@@ -85,7 +85,6 @@ namespace DiazDTRPG
                     self.Show();
                 });
             }
-
         }
 
         /// <summary>
@@ -93,7 +92,10 @@ namespace DiazDTRPG
         /// </summary>
         public void UpdateTopStautsValue()
         {
+            // 更新本页面的数据
             UITopStatus.ShowValueChaged();
+            // 更新首页数据
+            UIMgr.GetPanel<UIHomePanel>().UpdateTopStautsValue();
         }
     }
 }

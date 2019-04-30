@@ -36,7 +36,16 @@ namespace DiazDTRPG
         public Button MenuMessages;
         
         [SerializeField()]
+        public Text TxtGoldNum;
+        
+        [SerializeField()]
         public Button BtnGoldAdd;
+        
+        [SerializeField()]
+        public Text TxtGemNum;
+        
+        [SerializeField()]
+        public Button BtnGemAdd;
         
         [SerializeField()]
         public Button MenuShop;
@@ -49,9 +58,6 @@ namespace DiazDTRPG
         
         [SerializeField()]
         public Button BtnUserInfo;
-        
-        [SerializeField()]
-        public Button BtnGemAdd;
         
         // 战斗按钮
         [SerializeField()]
@@ -87,12 +93,14 @@ namespace DiazDTRPG
             MenuSetting = null;
             MenuProps = null;
             MenuMessages = null;
+            TxtGoldNum = null;
             BtnGoldAdd = null;
+            TxtGemNum = null;
+            BtnGemAdd = null;
             MenuShop = null;
             MenuPub = null;
             MenuHeros = null;
             BtnUserInfo = null;
-            BtnGemAdd = null;
             BtnPlay = null;
             MenuBackpack = null;
             MenuTeam = null;

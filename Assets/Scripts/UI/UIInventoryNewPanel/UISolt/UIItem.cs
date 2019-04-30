@@ -81,15 +81,6 @@ namespace DiazDTRPG
         }
 
 
-
-
-
-
-
-
-
-
-
         protected override void OnBeforeDestroy()
         {
         }

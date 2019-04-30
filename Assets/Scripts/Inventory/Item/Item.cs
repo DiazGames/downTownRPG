@@ -67,7 +67,37 @@ namespace DiazDTRPG
             Sprite = sprite;
         }
 
-
+        /// <summary> 
+        /// 得到提示面板应该显示什么样的内容
+        /// </summary>
+        /// <returns></returns>
+        public virtual string GetToolTipText()
+        {
+            string color = "";
+            switch (Quality)
+            {
+                case ItemQuality.Common:
+                    color = "white";
+                    break;
+                case ItemQuality.Uncommon:
+                    color = "lime";
+                    break;
+                case ItemQuality.Rare:
+                    color = "navy";
+                    break;
+                case ItemQuality.Epic:
+                    color = "magenta";
+                    break;
+                case ItemQuality.Legendary:
+                    color = "orange";
+                    break;
+                case ItemQuality.Artifact:
+                    color = "red";
+                    break;
+            }
+            string text = string.Format("<color={3}>{0}</color>\n<size=30><color=green>出售价格：{1}</color></size>\n<color=yellow><size=30>{2}</size></color>", Name, SellPrice, Description, color);
+            return text;
+        }
     }
 
     /// <summary>
@@ -94,4 +124,6 @@ namespace DiazDTRPG
         Ancient,                                                                // 远古的
         Artifact                                                                // 人工锻造
     }
+
+
 }

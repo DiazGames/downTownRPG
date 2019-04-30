@@ -151,7 +151,7 @@ namespace DiazDTRPG
 
                         break;
                     case ItemType.Material:
-                        item = new Item(
+                        item = new Material(
                                 id, nameStr, type, quality, description, capacity, buyPrice, sellPrice, sprite
                                 );
                         break;

@@ -25,7 +25,8 @@ namespace DiazDTRPG
                     {
                         UIMgr.OpenPanel<UIInventoryItemPanel>(new UIInventoryItemPanelData
                         {
-                            item = UIItem.Item
+                            item = UIItem.Item,
+                            Amount = UIItem.Amount
                         });
                     }
                     else

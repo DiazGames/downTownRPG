@@ -20,5 +20,14 @@ namespace DiazDTRPG
             HP = hp;
             MP = mp;
         }
+
+        public override string GetToolTipText()
+        {
+            string text = base.GetToolTipText();
+
+            string newText = string.Format("{0}\n\n<color=blue>加血：{1}\n加蓝：{2}</color>", text, HP, MP);
+
+            return newText;
+        }
     }
 }

@@ -27,11 +27,32 @@ namespace DiazDTRPG
             Damage = damage;
             WpType = wpType;
         }
+
+        public override string GetToolTipText()
+        {
+            string text = base.GetToolTipText();
+
+            string wpTypeText = "";
+
+            switch (WpType)
+            {
+                case WeaponType.OffHand:
+                    wpTypeText = "副手";
+                    break;
+                case WeaponType.MainHand:
+                    wpTypeText = "主手";
+                    break;
+            }
+
+            string newText = string.Format("{0}\n\n<color=blue>武器类型：{1}\n攻击力：{2}</color>", text, wpTypeText, Damage);
+
+            return newText;
+        }
     }
 
     public enum WeaponType
     {
-
+        None,
         OffHand,    // 副手
         MainHand    // 主手
     }

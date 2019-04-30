@@ -22,6 +22,7 @@ namespace DiazDTRPG
     public class UIInventoryItemPanelData : QFramework.UIPanelData
     {
         public Item item;
+        public int Amount;
     }
     
     public partial class UIInventoryItemPanel : QFramework.UIPanel
@@ -43,10 +44,15 @@ namespace DiazDTRPG
         {
             mData = uiData as UIInventoryItemPanelData ?? new UIInventoryItemPanelData();
             // please add init code here
-
-            TxtItemDes.text = mData.item.Name;
+            ImgItem.sprite = Resources.Load<Sprite>(mData.item.Sprite);
+            ItemDesc.text = mData.item.GetToolTipText();
+            if (mData.item.Type == ItemType.Consumable || mData.item.Type == ItemType.Material)
+            {
+                BtnUpgrade.Hide();
+                BtnSell.transform.position = BtnUpgrade.transform.position;
+            }
         }
-        
+
         protected override void OnOpen(QFramework.IUIData uiData)
         {
         }

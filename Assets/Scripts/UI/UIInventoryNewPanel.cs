@@ -18,7 +18,8 @@ namespace DiazDTRPG
     using UnityEngine;
     using UnityEngine.UI;
     using UniRx;
-    
+    using System.Text;
+
     public class UIInventoryNewPanelData : QFramework.UIPanelData
     {
     }
@@ -42,6 +43,7 @@ namespace DiazDTRPG
                 {
                     int id = UnityEngine.Random.Range(1, 6);
                     StoreItem(id);
+                    SaveInventory();
                 }
             });
 
@@ -63,8 +65,10 @@ namespace DiazDTRPG
             // please add init code here
 
             ShowInventoryList();
-
+            LoadInventory();
             ShowUsedTextCount();
+
+
 
         }
         
@@ -282,5 +286,56 @@ namespace DiazDTRPG
             UIMgr.GetPanel<UIHomePanel>().UpdateTopStautsValue();
         }
 
+
+        #region save and load
+        /// <summary>
+        /// 保存背包数据
+        /// </summary>
+        public void SaveInventory()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            foreach (UISolt slot in mSlotList)
+            {
+                if (slot.UIItem.Amount > 0)
+                {
+                    sb.Append(slot.UIItem.Item.ID + "," + slot.UIItem.Amount + "-");
+                }
+                else
+                {
+                    sb.Append("0-");
+                }
+            }
+            PlayerPrefs.SetString("DIAZDownTownRPG", sb.ToString());
+        }
+
+        /// <summary>
+        /// 加载背包数据
+        /// </summary>
+        public void LoadInventory()
+        {
+            if (PlayerPrefs.HasKey("DIAZDownTownRPG") == false) return;
+            string str = PlayerPrefs.GetString("DIAZDownTownRPG");
+            //print(str);
+            string[] itemArray = str.Split('-');
+            for (int i = 0; i < itemArray.Length - 1; i++)
+            {
+                string itemStr = itemArray[i];
+                if (itemStr != "0")
+                {
+                    //print(itemStr);
+                    string[] temp = itemStr.Split(',');
+                    int id = int.Parse(temp[0]);
+                    Item item = ItemsData.GetItemByID(id);
+                    int amount = int.Parse(temp[1]);
+                    for (int j = 0; j < amount; j++)
+                    {
+                        mSlotList[i].StoreItem(item);
+                    }
+                }
+            }
+        }
+        #endregion
     }
+
 }

@@ -27,13 +27,16 @@ namespace DiazDTRPG
         public UITopStatus UITopStatus;
         
         [SerializeField()]
-        public Text TxtItemDes;
+        public Image ImgItem;
         
         [SerializeField()]
         public Button BtnSell;
         
         [SerializeField()]
         public Button BtnUpgrade;
+        
+        [SerializeField()]
+        public Text ItemDesc;
         
         private UIInventoryItemPanelData mPrivateData = null;
         
@@ -53,9 +56,10 @@ namespace DiazDTRPG
         protected override void ClearUIComponents()
         {
             UITopStatus = null;
-            TxtItemDes = null;
+            ImgItem = null;
             BtnSell = null;
             BtnUpgrade = null;
+            ItemDesc = null;
             mData = null;
         }
     }

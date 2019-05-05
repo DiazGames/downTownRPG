@@ -41,9 +41,9 @@ namespace DiazDTRPG
             {
                 if (Input.GetKeyDown(KeyCode.G))
                 {
-                    int id = UnityEngine.Random.Range(1, 6);
-                    StoreItem(id);
-                    SaveInventory();
+                    //int id = UnityEngine.Random.Range(1, 6);
+                    StoreItem(UnityEngine.Random.Range(1, 6));
+
                 }
             });
 
@@ -67,9 +67,6 @@ namespace DiazDTRPG
             ShowInventoryList();
             LoadInventory();
             ShowUsedTextCount();
-
-
-
         }
         
         protected override void OnOpen(QFramework.IUIData uiData)
@@ -116,53 +113,26 @@ namespace DiazDTRPG
 
                 return false;
             }
-
-            if (item.Capacity == 1)     // 如果该物品单独占用一个物品槽（slot）
-            {
-                // 找到一个空的物品槽放进去
-                UISolt slot = FindEmptySlot();
-                if (slot == null)
-                {
-                    Debug.LogWarning("没有空的物品槽");
-                    // 跳转到失败界面
-                    UIMgr.OpenPanel<UIDataUpdateSucceedPanel>(new UIDataUpdateSucceedPanelData
-                    {
-                        SuccessModel = new DataUpdateSuccessModel
-                        {
-                            StrTitle = "失败了",
-                            StrDesc = "没有空的物品槽~",
-                            IsSucceed = false
-                        }
-                    });
-                    return false;
-                }
-                else
-                {
-                    slot.StoreItem(item);
-                    // 显示已使用数量
-                    ShowUsedTextCount();
-                }
-            }
             else
             {
-                // 查找相同类型物品槽
-                UISolt slot = FindSameTypeSlot(item);
-                if (slot != null)
+                if (item.Capacity == 1)     // 如果该物品单独占用一个物品槽（slot）
                 {
-                    slot.StoreItem(item);
-                }
-                else
-                {
-                    UISolt emptySlot = FindEmptySlot();
-                    if (emptySlot != null)
+                    // 找到一个空的物品槽放进去
+                    UISolt slot = FindEmptySlot();
+                    if (slot != null)
                     {
-                        emptySlot.StoreItem(item);
+                        Debug.LogWarning("放置成功=================11111111");
+                        slot.StoreItem(item);
                         // 显示已使用数量
                         ShowUsedTextCount();
+
+                        SaveInventory();
+
+                        return true;
                     }
                     else
                     {
-                        Debug.LogWarning("没有空的物品槽");
+                        Debug.LogWarning("没有空的物品槽11111111");
                         // 跳转到失败界面
                         UIMgr.OpenPanel<UIDataUpdateSucceedPanel>(new UIDataUpdateSucceedPanelData
                         {
@@ -176,9 +146,55 @@ namespace DiazDTRPG
                         return false;
                     }
                 }
+                else
+                {
+                    // 查找相同类型物品槽
+                    UISolt slot = FindSameTypeSlot(item);
+                    if (slot != null)
+                    {
+                        Debug.LogWarning("放置成功=================2222222");
+                        slot.StoreItem(item);
+
+                        SaveInventory();
+
+                        return true;
+                    }
+                    else
+                    {
+                        UISolt emptySlot = FindEmptySlot();
+                        if (emptySlot != null)
+                        {
+                            Debug.LogWarning("放置成功=================111112222222");
+                            emptySlot.StoreItem(item);
+                            // 显示已使用数量
+                            ShowUsedTextCount();
+
+                            SaveInventory();
+
+                            return true;
+                        }
+                        else
+                        {
+                            Debug.LogWarning("没有空的物品槽2222222");
+                            // 跳转到失败界面
+                            UIMgr.OpenPanel<UIDataUpdateSucceedPanel>(new UIDataUpdateSucceedPanelData
+                            {
+                                SuccessModel = new DataUpdateSuccessModel
+                                {
+                                    StrTitle = "失败了",
+                                    StrDesc = "没有空的物品槽~",
+                                    IsSucceed = false
+                                }
+                            });
+                            return false;
+                        }
+                    }
+                }
             }
-            return true;
+
         }
+
+
 
         /// <summary>
         /// 查找空的物品槽
@@ -188,6 +204,7 @@ namespace DiazDTRPG
         {
             foreach (UISolt slot in mSlotList)
             {
+                Debug.Log("物品槽中物品数量 ====== " + slot.UIItem.Amount.ToString());
                 if (slot.UIItem.Amount == 0)
                 {
                     return slot;
@@ -286,6 +303,31 @@ namespace DiazDTRPG
             UIMgr.GetPanel<UIHomePanel>().UpdateTopStautsValue();
         }
 
+        ///// <summary>
+        ///// 更新uislot 并显示
+        ///// </summary>
+        ///// <param name="newSolt">New solt.</param>
+        ///// <param name="amount">剩余数量，如果是0，则直接移除</param>
+        //public void UpdateSoltInList(UISolt newSolt, int amount)
+        //{
+        //    if (amount > 0)
+        //    {
+        //        foreach (UISolt solt in mSlotList)
+        //        {
+        //            if (solt == newSolt && solt.UIItem.Amount >= 1)
+        //            {
+        //                solt.UIItem.Amount = amount;
+        //            }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        mSlotList.Remove(newSolt);
+        //    }
+        //    SaveInventory();
+        //    LoadInventory();
+        //}
+
 
         #region save and load
         /// <summary>
@@ -314,6 +356,7 @@ namespace DiazDTRPG
         /// </summary>
         public void LoadInventory()
         {
+            //mSlotList.Clear();
             if (PlayerPrefs.HasKey("DIAZDownTownRPG") == false) return;
             string str = PlayerPrefs.GetString("DIAZDownTownRPG");
             //print(str);
@@ -334,6 +377,8 @@ namespace DiazDTRPG
                     }
                 }
             }
+
+            Debug.Log("加载物品 ++++++ " + mSlotList.Count.ToString());
         }
         #endregion
     }

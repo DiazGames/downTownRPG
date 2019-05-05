@@ -21,10 +21,11 @@ namespace DiazDTRPG
                 .Subscribe(_ =>
                 {
 
-                    if (UIItem.Item.IsNotNull())
+                    if (UIItem.Amount >= 1)
                     {
                         UIMgr.OpenPanel<UIInventoryItemPanel>(new UIInventoryItemPanelData
                         {
+                            Solt = this,
                             item = UIItem.Item,
                             Amount = UIItem.Amount
                         });
@@ -59,6 +60,12 @@ namespace DiazDTRPG
             {
                 UIItem.AddAmount();
             }
+        }
+
+
+        public void ReduceItem(int amount)
+        {
+            UIItem.ReduceAmount(amount);
         }
 
         /// <summary>

@@ -27,6 +27,9 @@ namespace DiazDTRPG
         public UITopStatus UITopStatus;
         
         [SerializeField()]
+        public Image ItemPanel;
+        
+        [SerializeField()]
         public Image ImgItem;
         
         [SerializeField()]
@@ -37,6 +40,52 @@ namespace DiazDTRPG
         
         [SerializeField()]
         public Text ItemDesc;
+        
+        [SerializeField()]
+        public Image SelectNumPanel;
+        
+        [SerializeField()]
+        public Button BtnMin;
+        
+        [SerializeField()]
+        public Button BtnLess;
+        
+        [SerializeField()]
+        public Text TxtNum;
+        
+        [SerializeField()]
+        public Button BtnMore;
+        
+        [SerializeField()]
+        public Button BtnMax;
+        
+        [SerializeField()]
+        public Text TxtNumDesc;
+        
+        [SerializeField()]
+        public Button BtnSelectSell;
+        
+        [SerializeField()]
+        public Button BtnSelectCancel;
+        
+        [SerializeField()]
+        public Image SellConfirmPanel;
+        
+        // 失败成功图片
+        [SerializeField()]
+        public Image ImgTitle;
+        
+        [SerializeField()]
+        public Text TxtTile;
+        
+        [SerializeField()]
+        public Text TxtDesc;
+        
+        [SerializeField()]
+        public Button BtnConfirmOK;
+        
+        [SerializeField()]
+        public Button BtnConfirmCancel;
         
         private UIInventoryItemPanelData mPrivateData = null;
         
@@ -56,10 +105,26 @@ namespace DiazDTRPG
         protected override void ClearUIComponents()
         {
             UITopStatus = null;
+            ItemPanel = null;
             ImgItem = null;
             BtnSell = null;
             BtnUpgrade = null;
             ItemDesc = null;
+            SelectNumPanel = null;
+            BtnMin = null;
+            BtnLess = null;
+            TxtNum = null;
+            BtnMore = null;
+            BtnMax = null;
+            TxtNumDesc = null;
+            BtnSelectSell = null;
+            BtnSelectCancel = null;
+            SellConfirmPanel = null;
+            ImgTitle = null;
+            TxtTile = null;
+            TxtDesc = null;
+            BtnConfirmOK = null;
+            BtnConfirmCancel = null;
             mData = null;
         }
     }

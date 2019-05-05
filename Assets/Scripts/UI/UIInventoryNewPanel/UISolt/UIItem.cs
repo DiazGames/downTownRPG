@@ -80,7 +80,27 @@ namespace DiazDTRPG
             }
         }
 
+        /// <summary>
+        /// 减少物品数量
+        /// </summary>
+        /// <param name="amount">Amount.</param>
+        public void ReduceAmount(int amount = 1)
+        {
+            Amount -= amount;
+            //update ui 
+            if (Item.Capacity > 1)
+                TxtItemCount.text = Amount.ToString();
+            else
+                TxtItemCount.text = "";
 
+            if (Amount == 0)
+            {
+                Debug.Log("物品卖到没有了！！！！！！！！！");
+                //Hide();
+                ImgItem.sprite = Resources.Load<Sprite>("Images/inventory_item_bg");
+                ImgItemCount.Hide();
+            }
+        }
         protected override void OnBeforeDestroy()
         {
         }

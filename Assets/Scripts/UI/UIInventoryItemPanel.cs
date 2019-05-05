@@ -21,18 +21,92 @@ namespace DiazDTRPG
     
     public class UIInventoryItemPanelData : QFramework.UIPanelData
     {
+        public UISolt Solt;
         public Item item;
         public int Amount;
     }
     
     public partial class UIInventoryItemPanel : QFramework.UIPanel
     {
+        public int SelectNum = 1;
+
         protected override void RegisterUIEvent()
         {
             UITopStatus.BtnClose.OnClickAsObservable().Subscribe(_ =>
             {
                 CloseSelf();
             });
+
+            #region ItemPanel
+            BtnSell.OnClickAsObservable().Subscribe(_ =>
+            {
+                if (mData.item.Capacity > 1)
+                {
+                    ItemPanel.Hide();
+                    SellConfirmPanel.Hide();
+                    SelectNumPanel.Show();
+                }
+                else
+                {
+                    ItemPanel.Hide();
+                    SelectNumPanel.Hide();
+                    SellConfirmPanel.Show();
+                    TxtDesc.text = "确认售出道具，获得 " + mData.item.SellPrice.ToString() + " 金币吗？";
+                }
+            });
+            #endregion
+
+            #region SelectNumPanel
+            BtnSelectCancel.OnClickAsObservable().Subscribe(_ =>
+            {
+                ItemPanel.Show();
+                SelectNumPanel.Hide();
+                SellConfirmPanel.Hide();
+            });
+            BtnLess.OnClickAsObservable().Subscribe(_ =>
+            {
+                if (SelectNum > 1)
+                {
+                    SelectNum = SelectNum - 1;
+                }
+                ShowSelectTxt();
+            });
+            BtnMore.OnClickAsObservable().Subscribe(_ =>
+            {
+                if (SelectNum < mData.Amount)
+                {
+                    SelectNum = SelectNum + 1;
+                }
+                ShowSelectTxt();
+            });
+            BtnMin.OnClickAsObservable().Subscribe(_ =>
+            {
+                SelectNum = 1;
+                ShowSelectTxt();
+            });
+            BtnMax.OnClickAsObservable().Subscribe(_ =>
+            {
+                SelectNum = mData.Amount;
+                ShowSelectTxt();
+            });
+            BtnSelectSell.OnClickAsObservable().Subscribe(_ =>
+            {
+                SellDone();
+            });
+            #endregion
+
+            #region SellConfirmPanel
+            BtnConfirmCancel.OnClickAsObservable().Subscribe(_ =>
+            {
+                ItemPanel.Show();
+                SelectNumPanel.Hide();
+                SellConfirmPanel.Hide();
+            });
+            BtnConfirmOK.OnClickAsObservable().Subscribe(_ =>
+            {
+                SellDone();
+            });
+            #endregion
         }
 
         protected override void ProcessMsg(int eventId, QFramework.QMsg msg)
@@ -49,8 +123,9 @@ namespace DiazDTRPG
             if (mData.item.Type == ItemType.Consumable || mData.item.Type == ItemType.Material)
             {
                 BtnUpgrade.Hide();
-                BtnSell.transform.position = BtnUpgrade.transform.position;
             }
+
+            ShowSelectTxt();
         }
 
         protected override void OnOpen(QFramework.IUIData uiData)
@@ -67,6 +142,37 @@ namespace DiazDTRPG
         
         protected override void OnClose()
         {
+        }
+
+        private void ShowSelectTxt()
+        {
+            TxtNum.text = SelectNum.ToString() + " / " + mData.Amount.ToString();
+            TxtNumDesc.text = "可获得 " + (mData.item.SellPrice * SelectNum).ToString();
+        }
+
+        private void SellDone()
+        {
+            mData.Solt.ReduceItem(SelectNum);
+            // 显示已使用数量
+            UIMgr.GetPanel<UIInventoryNewPanel>().ShowUsedTextCount();
+            UIMgr.GetPanel<UIInventoryNewPanel>().SaveInventory();
+
+            GameData.GoldCount = GameData.GoldCount + mData.item.SellPrice * SelectNum;
+
+            UpdateTopStautsValue();
+
+            CloseSelf();
+        }
+
+        /// <summary>
+        /// 更新状态条上的数据
+        /// </summary>
+        public void UpdateTopStautsValue()
+        {
+            // 更新本页数据
+            UITopStatus.ShowValueChaged();
+            // 更新首页数据
+            UIMgr.GetPanel<UIInventoryNewPanel>().UpdateTopStautsValue();
         }
     }
 }

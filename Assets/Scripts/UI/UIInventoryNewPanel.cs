@@ -26,9 +26,7 @@ namespace DiazDTRPG
     
     public partial class UIInventoryNewPanel : QFramework.UIPanel
     {
-        //private UISolt[] slotList;
-
-        private List<UISolt> mSlotList;
+        protected static List<UISolt> mSlotList;
 
         /// <summary>
         /// 已使用的物品槽数量
@@ -41,15 +39,12 @@ namespace DiazDTRPG
             {
                 if (Input.GetKeyDown(KeyCode.G))
                 {
-                    //int id = UnityEngine.Random.Range(1, 6);
                     StoreItem(UnityEngine.Random.Range(1, 6));
-
                 }
             });
 
             BtnInventoryAdd.OnClickAsObservable().Subscribe(_ =>
             {
-                Debug.Log("BtnInventoryAdd =============");
                 UIMgr.OpenPanel<UIAddInventoryPanel>();
             });
         }
@@ -62,7 +57,6 @@ namespace DiazDTRPG
         protected override void OnInit(QFramework.IUIData uiData)
         {
             mData = uiData as UIInventoryNewPanelData ?? new UIInventoryNewPanelData();
-            // please add init code here
 
             ShowInventoryList();
             LoadInventory();
@@ -87,7 +81,6 @@ namespace DiazDTRPG
 
         public bool StoreItem(int id)
         {
-            Debug.Log("随机出来的ID是 ================ " + id);
             Item item = ItemsData.GetItemByID(id);
             if (item.IsNotNull())
             {
@@ -121,7 +114,6 @@ namespace DiazDTRPG
                     UISolt slot = FindEmptySlot();
                     if (slot != null)
                     {
-                        Debug.LogWarning("放置成功=================11111111");
                         slot.StoreItem(item);
                         // 显示已使用数量
                         ShowUsedTextCount();
@@ -132,7 +124,6 @@ namespace DiazDTRPG
                     }
                     else
                     {
-                        Debug.LogWarning("没有空的物品槽11111111");
                         // 跳转到失败界面
                         UIMgr.OpenPanel<UIDataUpdateSucceedPanel>(new UIDataUpdateSucceedPanelData
                         {
@@ -152,7 +143,6 @@ namespace DiazDTRPG
                     UISolt slot = FindSameTypeSlot(item);
                     if (slot != null)
                     {
-                        Debug.LogWarning("放置成功=================2222222");
                         slot.StoreItem(item);
 
                         SaveInventory();
@@ -164,7 +154,6 @@ namespace DiazDTRPG
                         UISolt emptySlot = FindEmptySlot();
                         if (emptySlot != null)
                         {
-                            Debug.LogWarning("放置成功=================111112222222");
                             emptySlot.StoreItem(item);
                             // 显示已使用数量
                             ShowUsedTextCount();
@@ -175,7 +164,6 @@ namespace DiazDTRPG
                         }
                         else
                         {
-                            Debug.LogWarning("没有空的物品槽2222222");
                             // 跳转到失败界面
                             UIMgr.OpenPanel<UIDataUpdateSucceedPanel>(new UIDataUpdateSucceedPanelData
                             {
@@ -191,9 +179,7 @@ namespace DiazDTRPG
                     }
                 }
             }
-
         }
-
 
 
         /// <summary>
@@ -205,11 +191,12 @@ namespace DiazDTRPG
             foreach (UISolt slot in mSlotList)
             {
                 Debug.Log("物品槽中物品数量 ====== " + slot.UIItem.Amount.ToString());
-                if (slot.UIItem.Amount == 0)
+                if (slot.UIItem.Amount == 0 && slot != null)
                 {
                     return slot;
                 }
             }
+
             return null;
         }
 
@@ -302,31 +289,6 @@ namespace DiazDTRPG
             // 更新首页数据
             UIMgr.GetPanel<UIHomePanel>().UpdateTopStautsValue();
         }
-
-        ///// <summary>
-        ///// 更新uislot 并显示
-        ///// </summary>
-        ///// <param name="newSolt">New solt.</param>
-        ///// <param name="amount">剩余数量，如果是0，则直接移除</param>
-        //public void UpdateSoltInList(UISolt newSolt, int amount)
-        //{
-        //    if (amount > 0)
-        //    {
-        //        foreach (UISolt solt in mSlotList)
-        //        {
-        //            if (solt == newSolt && solt.UIItem.Amount >= 1)
-        //            {
-        //                solt.UIItem.Amount = amount;
-        //            }
-        //        }
-        //    }
-        //    else
-        //    {
-        //        mSlotList.Remove(newSolt);
-        //    }
-        //    SaveInventory();
-        //    LoadInventory();
-        //}
 
 
         #region save and load

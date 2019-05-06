@@ -35,11 +35,6 @@ namespace DiazDTRPG
                         Debug.Log("点击了按钮！！！！！！！！！！！！！但是里面没有放置物品！");
                     }
 
-                    //UIMgr.GetPanel<UIInventoryNewPanel>().DoTransition<UIInventoryItemPanel>(new FadeInOut(), uiData: new UIInventoryItemPanelData()
-                    //{
-                    //    item = UIItem.Item
-                    //});
-
                 });
         }
 

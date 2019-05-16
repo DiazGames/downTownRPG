@@ -49,7 +49,7 @@ namespace DiazDTRPG
 
             Btn2Speed.OnClickAsObservable().Subscribe(_ =>
             {
-                Debug.Log("Btn2Speed clicke!");
+                Debug.Log("Btn2Speed clicked!");
             });
         }
         protected override void ProcessMsg(int eventId, QFramework.QMsg msg)

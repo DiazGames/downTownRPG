@@ -20,7 +20,6 @@ namespace DiazDTRPG
                 .OnClickAsObservable()
                 .Subscribe(_ =>
                 {
-
                     if (UIItem.Amount >= 1)
                     {
                         UIMgr.OpenPanel<UIInventoryItemPanel>(new UIInventoryItemPanelData

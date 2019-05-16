@@ -27,20 +27,6 @@ namespace DiazDTRPG
     {
         protected override void RegisterUIEvent()
         {
-            BtnClose.OnClickAsObservable().Subscribe(_ =>
-            {
-                CloseSelf();
-            });
-
-            BtnGemAdd.OnClickAsObservable().Subscribe(_ =>
-            {
-                UIMgr.OpenPanel<UIShopGemPanel>();
-            });
-
-            BtnGoldAdd.OnClickAsObservable().Subscribe(_ =>
-            {
-                UIMgr.OpenPanel<UIShopGoldPanel>();
-            });
 
             BtnFree.OnClickAsObservable().Subscribe(_ =>
             {
@@ -61,6 +47,7 @@ namespace DiazDTRPG
         {
             mData = uiData as UIHeroPubPanelData ?? new UIHeroPubPanelData();
             // please add init code here
+            UITopStatus.TxtTopTitle.text = "酒馆";
         }
         
         protected override void OnOpen(QFramework.IUIData uiData)

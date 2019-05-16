@@ -22,16 +22,9 @@ namespace DiazDTRPG
     {
         
         public const string NAME = "UIHeroPubPanel";
-        
+
         [SerializeField()]
-        public Button BtnClose;
-        
-        [SerializeField()]
-        public Button BtnGoldAdd;
-        
-        [SerializeField()]
-        public Button BtnGemAdd;
-        
+        public UITopStatus UITopStatus;
         [SerializeField()]
         public Button BtnFree;
         
@@ -55,9 +48,7 @@ namespace DiazDTRPG
         
         protected override void ClearUIComponents()
         {
-            BtnClose = null;
-            BtnGoldAdd = null;
-            BtnGemAdd = null;
+            UITopStatus = null;
             BtnFree = null;
             BtnGem = null;
             mData = null;

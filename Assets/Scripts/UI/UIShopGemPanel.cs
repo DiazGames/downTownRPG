@@ -50,6 +50,7 @@ namespace DiazDTRPG
             mData = uiData as UIShopGemPanelData ?? new UIShopGemPanelData();
             // please add init code here
             ShowProductGemList();
+            UITopStatus.TxtTopTitle.text = "商店";
         }
         
         protected override void OnOpen(QFramework.IUIData uiData)

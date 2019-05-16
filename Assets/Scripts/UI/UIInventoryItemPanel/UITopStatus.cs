@@ -11,11 +11,12 @@ using UniRx;
 
 namespace DiazDTRPG
 {
-	public partial class UITopStatus : UIElement
+    public partial class UITopStatus : UIElement
 	{
-		private void Awake()
+        private void Awake()
 		{
             ShowValueChaged();
+
             BtnClose.OnClickAsObservable().Subscribe(_ =>
             {
                 // 关闭父节点的panel

@@ -57,14 +57,24 @@ namespace DiazDTRPG
         protected override void OnInit(QFramework.IUIData uiData)
         {
             mData = uiData as UIInventoryNewPanelData ?? new UIInventoryNewPanelData();
+            UITopStatus.TxtTopTitle.text = "背包";
 
             ShowInventoryList();
             LoadInventory();
             ShowUsedTextCount();
+
         }
         
         protected override void OnOpen(QFramework.IUIData uiData)
         {
+            //UITopStatus.Instantiate()
+            //.ApplySelfTo(self =>
+            //{
+            //    self.TopStatusModel = new TopStatusModel()
+            //    {
+            //        StrTitle = "背包"
+            //    };
+            //});
         }
         
         protected override void OnShow()

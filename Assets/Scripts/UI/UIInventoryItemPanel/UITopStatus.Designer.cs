@@ -10,7 +10,9 @@ namespace DiazDTRPG
 {
 	public partial class UITopStatus
 	{
-		[SerializeField] public Button BtnClose;
+        // 标题
+        [SerializeField] public Text TxtTopTitle;
+        [SerializeField] public Button BtnClose;
 		[SerializeField] public Text TxtGoldNumber;
 		[SerializeField] public Button BtnGoldAdd;
 		[SerializeField] public Text TxtGemNumber;
@@ -18,6 +20,7 @@ namespace DiazDTRPG
 
 		public void Clear()
 		{
+            TxtTopTitle = null;
 			BtnClose = null;
 			TxtGoldNumber = null;
 			BtnGoldAdd = null;
